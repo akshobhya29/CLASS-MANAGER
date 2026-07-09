@@ -7,6 +7,8 @@ My first JAVA PROJECT
 
 2.Find Students using Roll number
 
+3.Delete Students
+
 ## CONCEPT USED
 
 ArrayList
