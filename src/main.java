@@ -20,12 +20,18 @@ public class main
 
         String a=sc.nextLine();
         students.add(a);}
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("       CLASS MANAGER       ");
         System.out.println("1. Add Students\n2. Display Students\n3. Search Students\n4. Delete Student\n5. EXIT");
         break;
 
         case 2:
-    System.out.println(students);
+            System.out.println("Roll NO.       Name");
+    for(int j=0;j<students.size();j++)
+    {int y=j+1;
+        System.out.println(y+"."+"             "+students.get(j));
+
+    }System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("       CLASS MANAGER       ");
             System.out.println("1. Add Students\n2. Display Students\n3. Search Students\n4. Delete Student\n5. EXIT");
     break;
@@ -33,6 +39,7 @@ public class main
             System.out.println("Enter the roll no. of the student you want to find");
     int rn=sc.nextInt();
     System.out.println("Roll number-"+rn+"       Name-"+students.get(rn-1));
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("       CLASS MANAGER       ");
             System.out.println("1. Add Students\n2. Display Students\n3. Search Students\n4. Delete Student\n5. EXIT");
     break;
@@ -40,11 +47,13 @@ public class main
         System.out.println("Enter the roll no. of student you want to delete");
         int del = sc.nextInt();
         students.remove(del - 1);
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("       CLASS MANAGER       ");
             System.out.println("1. Add Students\n2. Display Students\n3. Search Students\n4. Delete Student\n5. EXIT");
         break;
         case 5:
             System.out.println("THE END");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
             return;
         default:
             System.out.println("Please enter a valid choice");
