@@ -17,3 +17,4 @@ ArrayList
 
 Switch Case
 
+Methods
