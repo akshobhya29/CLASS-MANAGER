@@ -26,27 +26,48 @@ public class main
         break;
 
         case 2:
+            if(students.isEmpty())
+                System.out.println("Please enter the students first");
+            else
+            {
             System.out.println("Roll NO.       Name");
     for(int j=0;j<students.size();j++)
     {int y=j+1;
         System.out.println(y+"."+"             "+students.get(j));
 
-    }System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    }
+            }System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("       CLASS MANAGER       ");
             System.out.println("1. Add Students\n2. Display Students\n3. Search Students\n4. Delete Student\n5. EXIT");
     break;
         case 3:
-            System.out.println("Enter the roll no. of the student you want to find");
+            if(students.isEmpty())
+                System.out.println("Please enter the students first");
+            else
+            {
+                System.out.println("Enter the roll no. of the student you want to find");
     int rn=sc.nextInt();
+    if(rn< 1|| rn>students.size())
+        System.out.println("Please enter a valid roll number");
+    else
     System.out.println("Roll number-"+rn+"       Name-"+students.get(rn-1));
+            }
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("       CLASS MANAGER       ");
             System.out.println("1. Add Students\n2. Display Students\n3. Search Students\n4. Delete Student\n5. EXIT");
     break;
         case 4:
+            if(students.isEmpty())
+                System.out.println("Please enter the students first");
+            else
+            {
         System.out.println("Enter the roll no. of student you want to delete");
         int del = sc.nextInt();
-        students.remove(del - 1);
+                if(del<1 || del>students.size()) {
+                    System.out.println("Please enter a valid roll number");
+                }
+                else
+        students.remove(del - 1);}
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("       CLASS MANAGER       ");
             System.out.println("1. Add Students\n2. Display Students\n3. Search Students\n4. Delete Student\n5. EXIT");
