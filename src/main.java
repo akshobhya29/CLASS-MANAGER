@@ -2,11 +2,20 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class main
 {
-    public static void main (String args[])
-{ Scanner sc=new Scanner(System.in);
-    ArrayList<String> students= new ArrayList<String>();
+    public void menu()
+{
     System.out.println("       CLASS MANAGER       ");
     System.out.println("1. Add Students\n2. Display Students\n3. Search Students\n4. Delete Student\n5. EXIT");
+}
+public void end()
+{
+    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+}
+    public static void main (String args[])
+{ main obj= new main();
+    Scanner sc=new Scanner(System.in);
+    ArrayList<String> students= new ArrayList<String>();
+   obj.menu();
     while(true)
     {int choice=sc.nextInt();
     switch(choice)
@@ -20,9 +29,8 @@ public class main
 
         String a=sc.nextLine();
         students.add(a);}
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        System.out.println("       CLASS MANAGER       ");
-        System.out.println("1. Add Students\n2. Display Students\n3. Search Students\n4. Delete Student\n5. EXIT");
+        obj.end();
+        obj.menu();
         break;
 
         case 2:
@@ -36,9 +44,8 @@ public class main
         System.out.println(y+"."+"             "+students.get(j));
 
     }
-            }System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println("       CLASS MANAGER       ");
-            System.out.println("1. Add Students\n2. Display Students\n3. Search Students\n4. Delete Student\n5. EXIT");
+            }obj.end();
+            obj.menu();
     break;
         case 3:
             if(students.isEmpty())
@@ -52,9 +59,8 @@ public class main
     else
     System.out.println("Roll number-"+rn+"       Name-"+students.get(rn-1));
             }
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println("       CLASS MANAGER       ");
-            System.out.println("1. Add Students\n2. Display Students\n3. Search Students\n4. Delete Student\n5. EXIT");
+            obj.end();
+            obj.menu();
     break;
         case 4:
             if(students.isEmpty())
@@ -68,9 +74,8 @@ public class main
                 }
                 else
         students.remove(del - 1);}
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println("       CLASS MANAGER       ");
-            System.out.println("1. Add Students\n2. Display Students\n3. Search Students\n4. Delete Student\n5. EXIT");
+            obj.end();
+            obj.menu();
         break;
         case 5:
             System.out.println("THE END");
@@ -78,8 +83,7 @@ public class main
             return;
         default:
             System.out.println("Please enter a valid choice");
-            System.out.println("       CLASS MANAGER       ");
-            System.out.println("1. Add Students\n2. Display Students\n3. Search Students\n4. Delete Student\n5. EXIT");
+            obj.menu();
     }
     }
     }
